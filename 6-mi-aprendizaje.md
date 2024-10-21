@@ -20,4 +20,8 @@ Se explicó cómo levantar una aplicación web (WordPress) en un contenedor Dock
 
 #### 5. Depuración de errores en aplicaciones basadas en contenedores
 Se identificaron y solucionaron problemas de conexión entre WordPress y MySQL, usando herramientas como los logs de Docker y la verificación manual de la conectividad entre los contenedores. También se habilitó la depuración en WordPress para obtener más detalles sobre el problema.
+***
 
+Autor: Kevin Asimbaya  
+Fecha: 20/10/2024
+***
