@@ -10,21 +10,27 @@ docker run -d --name <nombre contenedor> -e <nombre variable1>=<valor1> -e <nomb
 
 ### Crear un contenedor a partir de la imagen de nginx:alpine con las siguientes variables de entorno: username y role. Para la variable de entorno rol asignar el valor admin.
 
-# COMPLETAR
+![variables_solu_01](img_solu/variables_solu_01.png)
 
 # CAPTURA CON LA COMPROBACIÓN DE LA CREACIÓN DE LAS VARIABLES DE ENTORNO DEL CONTENEDOR ANTERIOR
 
 ### Crear un contenedor con mysql:8 , mapear todos los puertos
-# COMPLETAR
+![variables_solu_02](img_solu/variables_solu_02.png)
 
 ### ¿El contenedor se está ejecutando?
-# COMPLETAR
+No.
+***
 
 ### Identificar el problema
-# COMPLETAR
+Falta las variables de entorno, al menos una de las siguientes debe ser especificada.
+- MYSQL_ROOT_PASSWORD
+- MYSQL_ALLOW_EMPTY_PASSWORD
+- MYSQL_RANDOM_ROOT_PASSWORD
+![variables_solu_03](img_solu/variables_solu_03.png)
+
 
 ### Eliminar el contenedor creado con mysql:8 
-# COMPLETAR
+![variables_solu_04](img_solu/variables_solu_04.png)
 
 ### Para crear un contenedor con variables de entorno especificadas
 - Portabilidad: Las aplicaciones se vuelven más portátiles y pueden ser desplegadas en diferentes entornos (desarrollo, pruebas, producción) simplemente cambiando el archivo de variables de entorno.
@@ -41,9 +47,19 @@ docker run -d --name <nombre contenedor> --env-file=<nombreArchivo>.<extensión>
 Es necesario especificar la ruta absoluta del archivo si este se encuentra en una ubicación diferente a la que estás ejecutando el comando docker run.
 
 ### Crear un contenedor con mysql:8 , mapear todos los puertos y configurar las variables de entorno mediante un archivo
-# COMPLETAR
+```
+Set-Content -Path "C:\Users\Kevin Pc\en_Var_Dck\.env" -Value "MYSQL_ROOT_PASSWORD=admin`nMYSQL_DATABASE=MyBD`nMYSQL_USER=admin`nMYSQL_PASSWORD=gr2sw
+```
+![variables_solu_05](img_solu/variables_solu_05.png)
+
+```
+docker run P -d --name mysql-cont --env-file="C:\Users\Kevin Pc\en_Var_Dck\.env" mysql:8
+```
+![variables_solu_06](img_solu/variables_solu_06.png)
 
 # CAPTURA CON LA COMPROBACIÓN DE LA CREACIÓN DE LAS VARIABLES DE ENTORNO DEL CONTENEDOR ANTERIOR 
+![variables_solu_06](img_solu/variables_solu_06.png)
 
-### ¿Qué bases de datos existen en el contenedor creado?
-# COMPLETAR
+## ¿Qué bases de datos existen en el contenedor creado?
+![variables_solu_07](img_solu/variables_solu_07.png)
+![variables_solu_08](img_solu/variables_solu_08.png)
